@@ -1,0 +1,13 @@
+grammar ru.iqsocial.PublicDsl with org.eclipse.xtext.xbase.Xbase
+
+generate publicDsl "http://www.xtext.org/ru/iqsocial/PublicDsl"
+
+Model:
+    "model" name=ID "{"
+        expressions+=NamedExpression*
+    "}"
+;
+
+NamedExpression:
+    name=ID "=" body=XExpression
+;
